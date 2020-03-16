@@ -1,0 +1,15 @@
+<% if @my_followers.present? %>
+	<% @my_followers.each do |my_follower| %>
+		<%= my_follower.user.email%>
+	<% end %>
+<% else %>
+	No Followers found
+<% end %>
+
+<% if @my_followings.present? %>
+	<% @my_followings.each do |my_following| %>
+		<%= my_follower.user.name%>
+	<% end %>
+<% else %>
+	No Followings found
+<% end %>

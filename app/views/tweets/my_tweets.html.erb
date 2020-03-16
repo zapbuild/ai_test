@@ -1,0 +1,8 @@
+
+<% if @tweets.present? %>
+	<% @tweets.each do |tweet| %>
+		<%= tweet.title %> <br>
+	<% end %>
+<% else %>
+	No Tweets found
+<% end %>

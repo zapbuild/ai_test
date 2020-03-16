@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Twitter</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<% if current_user.present? %>
+
+  <%= link_to "All Users", users_path %>
+  <%= link_to "My Profile", my_profile_path %>
+  <%= link_to "My Tweets", my_tweets_path %>
+  <%= link_to "My Followers", my_follows_path %>
+  <%= link_to "Sign out", destroy_user_session_path	, :method => 'delete' %>
+  
+  
+  
+<% else %>
+  <%= link_to "Sign Up", new_user_registration_path %> |   <%= link_to "Sign In", new_user_session_path %>
+<% end %>
+
+<%= yield %>
+
+</body>
+</html>
